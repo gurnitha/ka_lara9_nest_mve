@@ -108,3 +108,19 @@ Belajar membuat aplikasi multivendor ecommerce menggunakan Laravel 9
         DB_PASSWORD=root
 
 
+#### 4. Create default tables and create a new user
+
+        Steps:
+
+        1. Run migrations
+        > php artisan migrate
+
+        modified:   resources/js/bootstrap.js
+        new file:   resources/js/bootstrap_ori.js
+
+        NOTE:
+
+        1. There was a problem: the dropdown menu did not work.
+        2. Fixing using resources/js/bootstrap.js from source_code
+
+        :)
