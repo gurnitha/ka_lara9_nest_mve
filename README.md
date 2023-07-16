@@ -284,3 +284,55 @@ Belajar membuat aplikasi multivendor ecommerce menggunakan Laravel 9
 
         modified:   README.md
         modified:   database/factories/UserFactory.php
+
+
+#### 9. SEEDERS - Insert fake data to db
+
+        Steps:
+
+        1. Use fake data to insert data to db
+        2. Run fresh migration with --seed flag
+
+        λ php artisan migrate:fresh --seed
+
+          Dropping all tables ................................................................................................................. 1,190ms DONE
+
+           INFO  Preparing database.
+
+          Creating migration table .............................................................................................................. 633ms DONE
+
+           INFO  Running migrations.
+
+          2014_10_12_000000_create_users_table ................................................................................................ 1,506ms DONE
+          2014_10_12_100000_create_password_resets_table ...................................................................................... 1,113ms DONE
+          2019_08_19_000000_create_failed_jobs_table .......................................................................................... 1,018ms DONE
+          2019_12_14_000001_create_personal_access_tokens_table ............................................................................... 1,748ms DONE
+
+           INFO  Seeding database.
+
+          Database\Seeders\UsersTableSeeder ........................................................................................................ RUNNING
+          Database\Seeders\UsersTableSeeder ................................................................................................. 354.06 ms DONE
+
+        modified:   README.md
+        modified:   database/seeders/DatabaseSeeder.php
+        modified:   database/seeders/UsersTableSeeder.php
+
+        mysql> select id, username, email, role from users;
+        +----+----------+-------------------------------+----------+
+        | id | username | email                         | role     |
+        +----+----------+-------------------------------+----------+
+        |  1 | admin    | admin@mail.com                | admin    |
+        |  2 | vendor   | vendor@mail.com               | vendor   |
+        |  3 | customer | customer@mail.com             | customer |
+        |  4 | NULL     | chelsie.wiegand@example.com   | admin    |
+        |  5 | NULL     | lkassulke@example.com         | admin    |
+        |  6 | NULL     | karolann.flatley@example.com  | admin    |
+        |  7 | NULL     | west.arielle@example.org      | vendor   |
+        |  8 | NULL     | herzog.giovanna@example.net   | vendor   |
+        |  9 | NULL     | colby.schmeler@example.org    | customer |
+        | 10 | NULL     | feil.joyce@example.net        | customer |
+        | 11 | NULL     | wisozk.candelario@example.net | customer |
+        +----+----------+-------------------------------+----------+
+        11 rows in set (0.00 sec)
+
+        :)
