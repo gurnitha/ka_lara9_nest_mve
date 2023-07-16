@@ -81,3 +81,30 @@ Belajar membuat aplikasi multivendor ecommerce menggunakan Laravel 9
         new file:   vite.config.js
 
         :)
+
+
+#### 3. Create db and connect it with the project
+
+        Steps:
+
+        1. Run server and open mysql
+        λ mysql -u root -p
+        Enter password: ****
+        Welcome to the MySQL monitor.  Commands end with ; or \g.
+        Your MySQL connection id is 93
+        Server version: 8.0.13 MySQL Community Server - GPL
+
+        2. Create db
+        > mysql> CREATE DATABASE ka_lara9_nest_mve;
+        > mysql> USE ka_lara9_nest_mve;
+
+        3. Define db credentials in .env file
+
+        DB_CONNECTION=mysql
+        DB_HOST=127.0.0.1
+        DB_PORT=3306
+        DB_DATABASE=ka_lara9_nest_mve
+        DB_USERNAME=root
+        DB_PASSWORD=root
+
+
