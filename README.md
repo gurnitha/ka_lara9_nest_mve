@@ -124,3 +124,77 @@ Belajar membuat aplikasi multivendor ecommerce menggunakan Laravel 9
         2. Fixing using resources/js/bootstrap.js from source_code
 
         :)
+
+
+#### 5. Customizing users table
+
+        Steps:
+
+        1. Modified: 2014_10_12_000000_create_users_table to this:
+
+            public function up()
+            {
+                Schema::create('users', function (Blueprint $table) {
+                    $table->id();
+                    $table->string('name');
+                    $table->string('username')->nullable();
+                    $table->string('email')->unique();
+                    $table->timestamp('email_verified_at')->nullable();
+                    $table->string('password');
+                    $table->string('photo')->nullable();
+                    $table->string('phone')->nullable();
+                    $table->text('address')->nullable();
+                    $table->enum('role',['admin','vendor','user'])->default('user');
+                    $table->enum('status',['active','inactive'])->default('active'); 
+                    $table->rememberToken();
+                    $table->timestamps();
+                });
+            }
+
+        2. Run fresh migration
+
+        λ php artisan migrate:fresh
+
+          Dropping all tables ................................................................................................................. 1,911ms DONE
+
+           INFO  Preparing database.
+
+          Creating migration table .............................................................................................................. 638ms DONE
+
+           INFO  Running migrations.
+
+          2014_10_12_000000_create_users_table ................................................................................................ 1,238ms DONE
+          2014_10_12_100000_create_password_resets_table ...................................................................................... 1,143ms DONE
+          2019_08_19_000000_create_failed_jobs_table .......................................................................................... 1,223ms DONE
+          2019_12_14_000001_create_personal_access_tokens_table ............................................................................... 1,522ms DONE
+
+
+        3. Check the result
+
+        mysql> DESC users;
+        +-------------------+-------------------------------+------+-----+---------+----------------+
+        | Field             | Type                          | Null | Key | Default | Extra          |
+        +-------------------+-------------------------------+------+-----+---------+----------------+
+        | id                | bigint(20) unsigned           | NO   | PRI | NULL    | auto_increment |
+        | name              | varchar(255)                  | NO   |     | NULL    |                |
+        | username          | varchar(255)                  | YES  |     | NULL    |                |
+        | email             | varchar(255)                  | NO   | UNI | NULL    |                |
+        | email_verified_at | timestamp                     | YES  |     | NULL    |                |
+        | password          | varchar(255)                  | NO   |     | NULL    |                |
+        | photo             | varchar(255)                  | YES  |     | NULL    |                |
+        | phone             | varchar(255)                  | YES  |     | NULL    |                |
+        | address           | text                          | YES  |     | NULL    |                |
+        | role              | enum('admin','vendor','user') | NO   |     | user    |                |
+        | status            | enum('active','inactive')     | NO   |     | active  |                |
+        | remember_token    | varchar(100)                  | YES  |     | NULL    |                |
+        | created_at        | timestamp                     | YES  |     | NULL    |                |
+        | updated_at        | timestamp                     | YES  |     | NULL    |                |
+        +-------------------+-------------------------------+------+-----+---------+----------------+
+        14 rows in set (0.00 sec)
+
+        4. Testing by creating a new user
+
+        :)
+
+        modified:   README.md
+        modified:   database/migrations/2014_10_12_000000_create_users_table.php
