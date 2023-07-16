@@ -208,6 +208,53 @@ Belajar membuat aplikasi multivendor ecommerce menggunakan Laravel 9
         λ php artisan make:seeder UsersTableSeeder
 
         INFO  Seeder [E:\workspace\laragon\www\ka_lara9_nest_mve\database/seeders/UsersTableSeeder.php] created successfully.
-        
+
         modified:   README.md
         new file:   database/seeders/UsersTableSeeder.php
+
+
+#### 7. SEEDERS - Create seeders: admin, vendor, customer
+
+        Steps:
+
+        1. Create seeders: admin, vendor, customer
+        file: database/seeders/UsersTableSeeder.php
+
+            public function run()
+            {
+                DB::table('users')->insert([
+
+                    // Admin
+                    [
+                        'name' => 'admin', 
+                        'username' => 'admin', 
+                        'email' => 'admin@mail.com', 
+                        'password' => Hash::make('111'), 
+                        'role' => 'admin', 
+                        'status' => 'active', 
+                    ],
+
+                    // Vendor
+                    [
+                        'name' => 'vendor', 
+                        'username' => 'vendor', 
+                        'email' => 'vendor@mail.com', 
+                        'password' => Hash::make('111'), 
+                        'role' => 'vendor', 
+                        'status' => 'active', 
+                    ],
+
+                    // User or Customer
+                    [
+                        'name' => 'cutomer', 
+                        'username' => 'cutomer', 
+                        'email' => 'cutomer@mail.com', 
+                        'password' => Hash::make('111'), 
+                        'role' => 'customer', 
+                        'status' => 'active', 
+                    ],
+                ]);
+
+        modified:   README.md
+        modified:   database/migrations/2014_10_12_000000_create_users_table.php
+        modified:   database/seeders/UsersTableSeeder.php
