@@ -258,3 +258,29 @@ Belajar membuat aplikasi multivendor ecommerce menggunakan Laravel 9
         modified:   README.md
         modified:   database/migrations/2014_10_12_000000_create_users_table.php
         modified:   database/seeders/UsersTableSeeder.php
+
+
+#### 8. SEEDERS - Create fake data
+
+        Steps:
+
+        1. In database/factories/UserFactory.php Create fake data
+
+            public function definition()
+            {
+                return [
+                    'name'      => fake()->name(),
+                    'email'     => fake()->safeEmail(),
+                    'email_verified_at' => now(),
+                    'password'  => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+                    'phone'     => fake()->phoneNumber,
+                    'address'   => fake()->address,
+                    'photo'     => fake()->imageUrl('60','60'),
+                    'role'      => fake()->randomElement(['admin','vendor','customer']),
+                    'status'    => fake()->randomElement(['active','inactive']),
+                    'remember_token' => Str::random(10),
+                ];
+            }
+
+        modified:   README.md
+        modified:   database/factories/UserFactory.php
