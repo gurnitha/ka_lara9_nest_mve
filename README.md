@@ -198,3 +198,16 @@ Belajar membuat aplikasi multivendor ecommerce menggunakan Laravel 9
 
         modified:   README.md
         modified:   database/migrations/2014_10_12_000000_create_users_table.php
+
+
+#### 6. SEEDERS - Create seeder file: UsersTableSeeder
+
+        Steps:
+
+        1. Create file
+        λ php artisan make:seeder UsersTableSeeder
+
+        INFO  Seeder [E:\workspace\laragon\www\ka_lara9_nest_mve\database/seeders/UsersTableSeeder.php] created successfully.
+        
+        modified:   README.md
+        new file:   database/seeders/UsersTableSeeder.php
