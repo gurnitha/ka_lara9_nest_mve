@@ -358,3 +358,30 @@ Belajar membuat aplikasi multivendor ecommerce menggunakan Laravel 9
         NOTE:
 
         Successfully display admin dashboard :)
+
+
+#### 11. DASHBOARD - Create admin dashboard
+
+        new file:   app/Http/Controllers/VendorController.php
+        new file:   resources/views/vendor/vendor_dashboard.blade.php
+        modified:   routes/web.php
+
+        1. Create VendorController
+        > php artisan make:controller VendorController
+        2. Create template
+        > mkdir resources/views/vendor/
+        3. Create Vendor page
+        > touch resources/views/vendor/vendor_dashboard.blade.php
+        4. In routes/web.php reate route
+        Route::get('/vendor/dashboard', [VendorController::class, 'VendorDashboard'])->name('vendor.dashobard');
+        5. Testing: open browser here: http://127.0.0.1:8000/vendor/dashboard
+
+        NOTE:
+
+        Successfully display vendor dashboard :)
+
+
+
+
+
+
