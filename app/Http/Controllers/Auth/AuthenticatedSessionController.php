@@ -1,5 +1,5 @@
 <?php
-
+// app/Http/Controller/Auth/AuthenticatedSessionController.php
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
@@ -32,9 +32,18 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
-    }
+        $url = '';
+        if ($request->user()->role === 'admin') {
+            $url = 'admin/dashboard';
+        } elseif ($request->user()->role === 'vendor') {
+            $url = 'vendor/dashboard';
+        } elseif ($request->user()->role === 'customer') {
+            $url = '/dashboard';
+        }
 
+        return redirect()->intended($url);
+    }
+ 
     /**
      * Destroy an authenticated session.
      *

@@ -396,3 +396,40 @@ Belajar membuat aplikasi multivendor ecommerce menggunakan Laravel 9
         modified:   app/Http/Kernel.php
 
 
+#### 14. DASHBOARD - Protecting admin and vendor routes
+
+        modified:   app/Http/Controllers/Auth/AuthenticatedSessionController.php
+        modified:   app/Http/Middleware/Role.php
+        modified:   routes/web.php
+
+        1. Checking the available routes
+
+        λ php artisan r:l                  
+                                                                                                                                                                                        
+          GET|HEAD   / ..............................................
+          POST       _ignition/execute-solution .............................................. ignition.executeSolution › Spatie\LaravelIgnition › ExecuteSolutionController  
+          GET|HEAD   _ignition/health-check .............................................. ignition.healthCheck › Spatie\LaravelIgnition › HealthCheckController  
+          POST       _ignition/update-config .............................................. ignition.updateConfig › Spatie\LaravelIgnition › UpdateConfigController  
+          GET|HEAD   admin/dashboard .............................................. admin.dashobard › AdminController@AdminDashboard  
+          GET|HEAD   api/user ..............................................  
+          GET|HEAD   confirm-password .............................................. password.confirm › Auth\ConfirmablePasswordController@show  
+          POST       confirm-password .............................................. Auth\ConfirmablePasswordController@store  
+          GET|HEAD   dashboard .............................................. dashboard  
+          POST       email/verification-notification .............................................. verification.send › Auth\EmailVerificationNotificationController@store  
+          GET|HEAD   forgot-password .............................................. password.request › Auth\PasswordResetLinkController@create  
+          POST       forgot-password .............................................. password.email › Auth\PasswordResetLinkController@store  
+          GET|HEAD   login .............................................. login › Auth\AuthenticatedSessionController@create  
+          POST       login .............................................. Auth\AuthenticatedSessionController@store  
+          POST       logout .............................................. logout › Auth\AuthenticatedSessionController@destroy  
+          GET|HEAD   register .............................................. register › Auth\RegisteredUserController@create  
+          POST       register .............................................. Auth\RegisteredUserController@store  
+          POST       reset-password .............................................. password.update › Auth\NewPasswordController@store  
+          GET|HEAD   reset-password/{token} .............................................. password.reset › Auth\NewPasswordController@create  
+          GET|HEAD   sanctum/csrf-cookie .............................................. Laravel\Sanctum › CsrfCookieController@show  
+          GET|HEAD   vendor/dashboard .............................................. vendor.dashobard › VendorController@VendorDashboard  
+          GET|HEAD   verify-email .............................................. verification.notice › Auth\EmailVerificationPromptController@__invoke  
+          GET|HEAD   verify-email/{id}/{hash} .............................................. verification.verify › Auth\VerifyEmailController@__invoke  
+                                                                                                                                                                                        
+                                                                                                                                                                   Showing [23] routes  
+
+
