@@ -336,3 +336,25 @@ Belajar membuat aplikasi multivendor ecommerce menggunakan Laravel 9
         11 rows in set (0.00 sec)
 
         :)
+
+
+#### 10. DASHBOARD - Create admin dashboard
+
+        modified:   README.md
+        new file:   app/Http/Controllers/AdminController.php
+        new file:   resources/views/admin/admin_dashboard.blade.php
+        modified:   routes/web.php
+
+        1. Create AdminController
+        > php artisan make:controller AdminController
+        2. Create template
+        > mkdir resources/views/admin/
+        3. Create admin page
+        > touch resources/views/admin/admin_dashboard.blade.php
+        4. In routes/web.php reate route
+        Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashobard');
+        5. Testing: open browser here: http://127.0.0.1:8000/admin/dashboard
+
+        NOTE:
+
+        Successfully display admin dashboard :)
