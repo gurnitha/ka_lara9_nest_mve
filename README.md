@@ -381,6 +381,14 @@ Belajar membuat aplikasi multivendor ecommerce menggunakan Laravel 9
         Successfully display vendor dashboard :)
 
 
+#### 12. DASHBOARD - Create MiddleWare called 'Role'
+
+        modified:   README.md
+        new file:   app/Http/Middleware/Role.php
+
+        1. Create middeware
+        > php artisan make:middleware 'Role'
+
 
 
 
