@@ -390,6 +390,9 @@ Belajar membuat aplikasi multivendor ecommerce menggunakan Laravel 9
         > php artisan make:middleware 'Role'
 
 
+#### 13. DASHBOARD - Register Role middleware to app/Http/Kernel.php
 
+        modified:   README.md
+        modified:   app/Http/Kernel.php
 
 
